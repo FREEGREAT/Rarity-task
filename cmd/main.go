@@ -19,7 +19,6 @@ func main() {
 
 	if err := godotenv.Load(); err != nil {
 		log.Warn("No .env file found — using environment variables from Kubernetes")
-		log.Info("Test log. BASE_URL=", os.Getenv("BASE_URL"))
 	}
 
 	raribleClient := api.NewRaribleApiClient(os.Getenv("BASE_URL"), os.Getenv("MAINNET"))
