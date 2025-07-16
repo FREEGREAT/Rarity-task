@@ -1,0 +1,10 @@
+replicaCount: 1
+
+image:
+  repository: blxxd543/rarible
+  tag: "v1.0.1"
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 8080

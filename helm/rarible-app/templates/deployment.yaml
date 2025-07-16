@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rarible-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rarible-app
+  template:
+    metadata:
+      labels:
+        app: rarible-app
+    spec:
+      containers:
+        - name: rarible
+          image: blxxd543/rarible:latest
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - secretRef:
+                name: rarible-secret
