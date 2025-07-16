@@ -126,7 +126,7 @@ make helm-install
 make helm-upgrade
 ```
 
-4. Local Run with Minikube
+4. Local Access via Port Forwarding
 ```bash 
 make port-forward
 ```
