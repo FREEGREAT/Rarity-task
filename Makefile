@@ -2,7 +2,7 @@ secret-generic:
 	kubectl create secret generic rarible-secret \
 	--from-env-file=.env
 
-pot-forward:
+port-forward:
 	kubectl port-forward svc/rarible 8080:8080 
 
 helm-install:

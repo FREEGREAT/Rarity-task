@@ -5,9 +5,6 @@
 
 ## 📦 Quick Start 
 
-
-## 🚀 Running in Kubernetes with Helm
-
 ### 🔧 Requirements
 
 - Kubernetes cluster (local or cloud)
@@ -23,10 +20,6 @@
 git clone https://github.com/FREEGREAT/Rarity-task.git
 cd Rarible-task
 ```
-
----
-
-
 ---
 
 ## 🛠️ Makefile Commands
@@ -115,9 +108,31 @@ POST http://localhost:8080/nft/trait-rarities
 ---
 
 ## 🚀 How to Use
+1. Run Minikube
+```bash
+minikube start
+```
 
-1. Import the `.json` file of this collection into Postman
-2. Use the provided requests to test the API
+2. Create Kubernetes Secret from .env
+```bash
+make secret-generic
+```
+3. Install or upgrade Heml chart
+```bash
+#Install - first time setup
+make helm-install
+
+#Upgrrade - for subsequent updates
+make helm-upgrade
+```
+
+4. Local Run with Minikube
+```bash 
+make port-forward
+```
+
+5. Import the `.json` file of this collection into Postman
+6. Use the provided requests to test the API
 
 
 
